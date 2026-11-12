@@ -122,18 +122,7 @@ export async function handleApi(request, env) {
     answer = String(answer || "").trim();
     if (!answer) throw new Error("模型返回空内容");
 
-    const seen = new Set();
-    const cites = sources
-      .map(s => ({ title: s.title, url: s.url }))
-      .filter(s => {
-        const k = s.title + s.url;
-        if (seen.has(k)) return false;
-        seen.add(k);
-        return true;
-      })
-      .slice(0, 4);
-
-    return json({ answer, sources: cites, model: env.GLM_MODEL || DEFAULT_MODEL });
+    return json({ answer, model: env.GLM_MODEL || DEFAULT_MODEL });
   } catch (e) {
     console.error("[glm] 调用失败", e && e.message);
     return json({ error: "小戏芽暂时连不上模型，请稍后再试～" }, 502);

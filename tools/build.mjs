@@ -27,12 +27,14 @@ for (const dir of ["html", "css", "js", "images", "data"]) {
   if (fs.existsSync(src)) copyDir(src, path.join(OUT, dir));
 }
 
-fs.writeFileSync(path.join(OUT, "index.html"),
-  '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">' +
-  '<meta http-equiv="refresh" content="0;url=/html/">' +
-  '<title>星城风物志</title></head><body>' +
-  '<p>正在入城…… <a href="/html/">进入星城风物志</a></p>' +
-  '</body></html>', "utf8");
+/* 根路径 / 直接返回真正的首页，不再显示 meta refresh 等待页。
+   页面里用的是 ../css、../js、../images 和同目录 xxx.html 链接，
+   在根路径下 "../" 会被浏览器规范化为根，所有相对路径仍然有效。
+   dist/html/ 保留一份，供知识库来源链接 /html/xxx.html 继续访问。 */
+for (const file of fs.readdirSync(path.join(ROOT, "html"))) {
+  if (!file.endsWith(".html")) continue;
+  fs.copyFileSync(path.join(ROOT, "html", file), path.join(OUT, file));
+}
 
 fs.writeFileSync(path.join(OUT, "_headers"),
   "/*\n" +

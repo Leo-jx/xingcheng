@@ -235,19 +235,3 @@
 @media(prefers-reduced-motion:reduce){
   .ip-ava img,.ip-badge::after,.ip-typing i{animation:none!important;}
 }
-
-/* ---------- 5. AI 回答的网页来源 ---------- */
-.ip-src{
-  display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;
-  margin-top:8px;padding-top:7px;border-top:1px dashed rgba(184,137,59,.42);
-}
-.ip-src-label{
-  font-size:10px;letter-spacing:.06em;color:#8A7658;margin-right:2px;
-}
-.ip-src a{
-  max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  padding:2px 7px;border:1px solid var(--ip-line);border-radius:999px;
-  background:rgba(255,255,255,.6);color:#8A5A2B;
-  font-size:10.5px;text-decoration:none;transition:.2s;
-}
-.ip-src a:hover{background:var(--ip-zhu);border-color:var(--ip-zhu);color:#FFF6E6;}

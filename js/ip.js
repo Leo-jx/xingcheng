@@ -1,7 +1,7 @@
 /* ==========================================================
    小戏芽 · 星城 AI 导游（智谱 GLM-4-Flash + 全站网页知识库 RAG）
    - 默认调用同源 /api/chat（Cloudflare Functions / 本地服务），密钥只在服务端
-   - 回答附带网页来源链接；接口不可用时自动回退内置知识库
+   - 直接给出回答；接口不可用时自动回退内置知识库
    - 依赖：无；不修改任何原有脚本与全局变量
    ========================================================== */
 (function () {
@@ -119,32 +119,12 @@
     d.className = "ip-sys"; d.textContent = text;
     log.appendChild(d); log.scrollTop = log.scrollHeight;
   }
-  function addSources(bubble, sources) {
-    if (!bubble || !sources || !sources.length) return;
-    var box = document.createElement("div");
-    box.className = "ip-src";
-    var label = document.createElement("span");
-    label.className = "ip-src-label";
-    label.textContent = "网页来源";
-    box.appendChild(label);
-    sources.forEach(function (s) {
-      var a = document.createElement("a");
-      a.href = s.url || "#";
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = s.title || "查看";
-      a.title = s.title || "";
-      box.appendChild(a);
-    });
-    bubble.appendChild(box);
-  }
   function addTyping() {
     var b = addMsg("ai", "");
     b.innerHTML = '<span class="ip-typing"><i></i><i></i><i></i></span>';
     return {
-      done: function (text, sources) {
+      done: function (text) {
         b.textContent = text;
-        if (sources) addSources(b, sources);
         log.scrollTop = log.scrollHeight;
       }
     };
@@ -195,7 +175,7 @@
     var p = (c.endpoint && typeof fetch === "function")
       ? askAI(text, c) : Promise.reject(new Error("无接口"));
     p.then(function (d) {
-      typing.done(d.answer, d.sources);
+      typing.done(d.answer);
       history.push({ role: "assistant", content: d.answer });
       setStatus("AI 在线", "on");
     }).catch(function () {
@@ -216,7 +196,7 @@
     panel.setAttribute("aria-hidden", "false");
     if (!opened) {
       opened = true;
-      addMsg("ai", "哟——我是小戏芽，穿花鼓戏衣裳的星城小导游！如今我读遍了全站网页，长沙的景、戏、味随您问～\n回答末尾会附上资料出处，点开就能翻到原页。");
+      addMsg("ai", "哟——我是小戏芽，穿花鼓戏衣裳的星城小导游！如今我读遍了全站网页，长沙的景、戏、味随您问～");
       checkHealth(true);
     }
     setTimeout(function () { try { input.focus(); } catch (e) { } }, 320);

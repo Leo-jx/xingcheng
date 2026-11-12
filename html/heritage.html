@@ -259,7 +259,7 @@ try{if(sessionStorage.getItem("cswf_entered")==="1"){document.documentElement.cl
     <button class="ip-icon" id="ipSettings" type="button" title="AI 接口设置" aria-label="AI 接口设置">&#9881;</button>
     <button class="ip-icon" id="ipClose" type="button" title="收起" aria-label="收起">&times;</button>
   </div>
-  <div class="ip-banner"><span class="ip-seal">GLM</span><span>读遍全站网页的 AI 导游 · 回答附资料出处</span></div>
+  <div class="ip-banner"><span class="ip-seal">GLM</span><span>读遍全站网页的 AI 导游 · 有问必答</span></div>
   <div class="ip-log" id="ipLog"></div>
   <div class="ip-quick" id="ipQuick">
     <button class="ip-chip" type="button">花鼓戏是什么</button>
@@ -284,7 +284,7 @@ try{if(sessionStorage.getItem("cswf_entered")==="1"){document.documentElement.cl
       <button class="ip-btn ip-btn-ghost" id="ipClear" type="button">恢复默认</button>
     </div>
     <p class="ip-note">
-      <b>线上：</b>部署在 Cloudflare 后，接口由 Pages Functions 提供，密钥通过 Secret 注入；回答末尾会附上对应的网页链接。<br>
+      <b>线上：</b>部署在 Cloudflare 后，接口由 Pages Functions 提供，密钥通过 Secret 注入，回答直接给出。<br>
       <b>本地：</b>运行 <code>npm run dev</code>（或双击 <code>tools/start-proxy.bat</code>），再访问 <code>http://127.0.0.1:8788/</code> 即可获得同样的效果。<br>
       <b>离线：</b>接口不可用时自动回退内置长沙文旅知识库，问了永远有回应；双击 HTML 文件也能演示。
     </p>
