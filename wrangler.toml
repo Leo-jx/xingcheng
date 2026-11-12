@@ -1,7 +1,9 @@
 # Cloudflare Pages 项目配置
 # 部署：npm run deploy
 # 密钥：wrangler pages secret put GLM_API_KEY --project-name xingcheng
+#       或 wrangler pages secret bulk .dev.vars --project-name xingcheng（文件内只放密钥）
 #       或在 Cloudflare Dashboard → Pages → xingcheng → Settings → Environment variables 添加
+# 注意：Secret 名称不能与下面 [vars] 中的普通变量重名，否则部署会失败
 name = "xingcheng"
 pages_build_output_dir = "dist"
 compatibility_date = "2025-04-01"
