@@ -1,0 +1,4 @@
+# 自动生成的数据文件固定使用 LF，避免 Windows autocrlf 造成的伪修改
+data/kb.json -text
+data/kb.js -text
+data/kb-embed.js -text
