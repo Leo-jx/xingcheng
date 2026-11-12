@@ -24,7 +24,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name xingcheng
+          command: pages deploy dist --project-name xingcheng --branch main
       - name: 未配置 Cloudflare 凭据
         if: env.CF_API_TOKEN == ''
         run: echo "::warning::请在仓库 Settings > Secrets 添加 CLOUDFLARE_API_TOKEN 与 CLOUDFLARE_ACCOUNT_ID，或在 Cloudflare Dashboard 直接关联本仓库自动部署。"

@@ -10,7 +10,7 @@
     "build": "npm run kb && node tools/build.mjs",
     "dev": "node tools/dev-server.mjs",
     "start": "node tools/dev-server.mjs",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name xingcheng"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name xingcheng --branch main"
   },
   "devDependencies": {
     "wrangler": "^4.89.0"
