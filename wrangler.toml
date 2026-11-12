@@ -1,0 +1,16 @@
+# Cloudflare Pages 项目配置
+# 部署：npm run deploy
+# 密钥：wrangler pages secret put GLM_API_KEY --project-name xingcheng
+#       或在 Cloudflare Dashboard → Pages → xingcheng → Settings → Environment variables 添加
+name = "xingcheng"
+pages_build_output_dir = "dist"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+GLM_API_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
+GLM_EMBEDDING_URL = "https://open.bigmodel.cn/api/paas/v4/embeddings"
+GLM_MODEL = "glm-4-flash"
+GLM_EMBEDDING_MODEL = "embedding-3"
+# 智谱 Embedding 需资源包；生成向量后改为 "1" 可启用语义检索
+GLM_EMBEDDINGS = "0"

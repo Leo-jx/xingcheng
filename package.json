@@ -1,0 +1,21 @@
+{
+  "name": "xingcheng",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "星城风物志 · 智谱 GLM 网页知识库 AI 导游",
+  "scripts": {
+    "kb": "node tools/build-kb.mjs",
+    "kb:embed": "node tools/embed-kb.mjs",
+    "build": "npm run kb && node tools/build.mjs",
+    "dev": "node tools/dev-server.mjs",
+    "start": "node tools/dev-server.mjs",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name xingcheng"
+  },
+  "devDependencies": {
+    "wrangler": "^4.89.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

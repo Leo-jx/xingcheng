@@ -1,0 +1,184 @@
+/* ============================================================
+   星城穿搭（卷七） · 星城居住（卷八） 专用样式
+   依赖 style.css 的变量与基础类，不改动原有样式
+   ============================================================ */
+
+/* ---------- 卷七 · 星城穿搭 ---------- */
+.wear-intro{
+  display:flex;align-items:center;gap:16px;
+  background:linear-gradient(135deg,rgba(227,190,114,.16),rgba(195,39,43,.08));
+  border:1px solid var(--line);border-radius:16px;
+  padding:14px 20px;margin:26px 0 18px;
+}
+.wear-intro img{
+  width:64px;height:64px;flex:0 0 64px;object-fit:contain;
+  filter:drop-shadow(0 6px 10px rgba(142,28,28,.22));
+}
+.wear-intro b{display:block;color:var(--zhu-deep);letter-spacing:.12em;font-size:16px;}
+.wear-intro p{font-size:13.5px;color:var(--hui);margin-top:2px;}
+
+.wear-tabs{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0 22px;
+}
+.wear-tab{
+  flex:1 1 140px;max-width:220px;cursor:pointer;
+  border:1px solid var(--line);background:rgba(255,252,246,.7);
+  border-radius:12px;padding:10px 14px;text-align:center;transition:.25s;
+}
+.wear-tab b{display:block;font-size:19px;letter-spacing:.3em;color:var(--mo);transition:.25s;}
+.wear-tab span{display:block;font-size:11.5px;color:var(--hui);margin-top:2px;letter-spacing:.04em;}
+.wear-tab:hover{border-color:var(--jin);transform:translateY(-2px);}
+.wear-tab.on{
+  background:var(--zhu);border-color:var(--zhu);
+  box-shadow:0 10px 18px -10px rgba(142,28,28,.8);
+}
+.wear-tab.on b,.wear-tab.on span{color:#FFF6E6;}
+
+.wear-panel{display:none;animation:rise .45s ease both;}
+.wear-panel.on{display:block;}
+
+.wear-stage{
+  position:relative;overflow:hidden;border-radius:18px;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 18% 22%,rgba(255,255,255,.75),transparent 55%),
+    radial-gradient(circle at 82% 78%,rgba(255,255,255,.55),transparent 50%),
+    linear-gradient(135deg,var(--stage-a,#EAF2E3),var(--stage-b,#F7E8DC));
+  display:flex;justify-content:center;padding:10px 0 0;
+}
+.wear-stage.spring{--stage-a:#E8F2E4;--stage-b:#FBEAF0;}
+.wear-stage.summer{--stage-a:#E3F1EC;--stage-b:#FDF3D9;}
+.wear-stage.autumn{--stage-a:#F7E9D7;--stage-b:#FBE7DB;}
+.wear-stage.winter{--stage-a:#E7ECF3;--stage-b:#F7EFE3;}
+.wear-stage img{
+  max-height:420px;width:auto;max-width:92%;object-fit:contain;
+  filter:drop-shadow(0 16px 26px rgba(90,52,18,.22));
+}
+
+.wear-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;}
+@media(max-width:700px){.wear-cols{grid-template-columns:1fr;}}
+.wear-card{
+  background:rgba(255,252,246,.82);border:1px solid var(--line);
+  border-radius:14px;padding:16px 18px 14px;position:relative;
+}
+.wear-card::before{
+  content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;
+  border-radius:4px;background:var(--tag,#C3272B);
+}
+.wear-card.girl{--tag:#C3272B;}
+.wear-card.boy{--tag:#2E5E4E;}
+.wear-card h4{
+  font-size:15px;letter-spacing:.14em;color:var(--zhu-deep);margin-bottom:8px;
+}
+.wear-card.boy h4{color:#2E5E4E;}
+.wear-card ul{list-style:none;}
+.wear-card li{
+  font-size:13.5px;color:var(--mo);padding:3px 0 3px 20px;position:relative;
+}
+.wear-card li::before{
+  content:"";position:absolute;left:2px;top:.95em;width:8px;height:8px;
+  transform:rotate(45deg);background:var(--tag);opacity:.75;border-radius:1px;
+}
+.wear-card li small{color:var(--hui);}
+
+.wear-tip{
+  margin-top:14px;padding:12px 18px;border-radius:12px;
+  border:1px dashed rgba(184,137,59,.55);
+  background:rgba(227,190,114,.12);
+  font-size:13.5px;color:var(--mo);
+}
+.wear-tip b{color:var(--jin);letter-spacing:.1em;}
+
+.wear-common{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px;
+}
+.wear-chip{
+  border:1px solid var(--line);border-radius:999px;
+  background:rgba(255,252,246,.75);
+  padding:7px 16px;font-size:12.5px;color:var(--hui);letter-spacing:.04em;
+}
+.wear-chip b{color:var(--zhu);margin-right:4px;}
+
+/* ---------- 卷八 · 星城居住 ---------- */
+.stay-budget{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin:26px 0 18px;justify-content:center;
+}
+.stay-budget-label{font-size:13.5px;color:var(--hui);letter-spacing:.1em;}
+.stay-bb{
+  cursor:pointer;border:1px solid var(--line);border-radius:999px;
+  background:rgba(255,252,246,.75);padding:8px 20px;
+  font-size:13px;color:var(--mo);letter-spacing:.06em;transition:.25s;
+}
+.stay-bb b{color:var(--zhu);}
+.stay-bb:hover{border-color:var(--jin);}
+.stay-bb.on{
+  background:var(--zhu);border-color:var(--zhu);color:#FFF6E6;
+  box-shadow:0 8px 16px -10px rgba(142,28,28,.8);
+}
+.stay-bb.on b{color:#FFE3B0;}
+
+.stay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+@media(max-width:760px){.stay-grid{grid-template-columns:1fr;}}
+.stay-card{
+  position:relative;overflow:hidden;
+  background:rgba(255,252,246,.82);border:1px solid var(--line);
+  border-radius:16px;padding:18px 20px 38px;transition:.3s;
+}
+.stay-card .stay-no{
+  position:absolute;right:14px;top:6px;
+  font-size:44px;color:rgba(184,137,59,.16);font-weight:700;
+}
+.stay-card h4{font-size:16px;letter-spacing:.1em;color:var(--zhu-deep);}
+.stay-card h4 small{font-size:12px;color:var(--jin);margin-left:8px;letter-spacing:.16em;}
+.stay-card p{font-size:13.5px;color:var(--mo);margin-top:6px;}
+.stay-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.stay-tags span{
+  font-size:11.5px;color:var(--hui);border:1px solid var(--line);
+  border-radius:999px;padding:2px 10px;background:rgba(246,239,224,.6);
+}
+.stay-price{
+  margin-top:10px;font-size:12.5px;color:var(--hui);letter-spacing:.05em;
+}
+.stay-price b{color:var(--zhu);}
+.stay-card.dim{opacity:.34;filter:grayscale(.6);}
+.stay-card.hit{
+  border-color:var(--zhu);
+  box-shadow:0 12px 22px -12px rgba(142,28,28,.55);
+  background:linear-gradient(160deg,rgba(255,252,246,.92),rgba(227,190,114,.12));
+}
+.stay-card .stay-fit{
+  position:absolute;left:16px;bottom:12px;font-size:11px;color:#FFF6E6;
+  background:var(--zhu);border-radius:999px;padding:2px 12px;letter-spacing:.1em;
+  opacity:0;transform:translateY(4px);transition:.3s;pointer-events:none;
+}
+.stay-card.hit .stay-fit{opacity:1;transform:none;}
+
+.stay-types{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;}
+@media(max-width:960px){.stay-types{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.stay-types{grid-template-columns:1fr;}}
+.stay-type{
+  text-align:center;border:1px solid var(--line);border-radius:14px;
+  background:rgba(255,252,246,.78);padding:18px 14px;transition:.25s;
+}
+.stay-type:hover{transform:translateY(-3px);box-shadow:0 12px 20px -14px rgba(142,28,28,.5);}
+.stay-type .t-ico{font-size:26px;line-height:1;}
+.stay-type h5{font-size:14.5px;letter-spacing:.14em;color:var(--zhu-deep);margin:8px 0 4px;}
+.stay-type p{font-size:12px;color:var(--hui);}
+.stay-type .t-price{display:inline-block;margin-top:8px;font-size:12px;color:var(--zhu);
+  border:1px dashed rgba(195,39,43,.4);border-radius:999px;padding:2px 12px;}
+
+.stay-tip{
+  margin-top:24px;padding:16px 22px;border-radius:14px;
+  border:1px dashed rgba(184,137,59,.55);background:rgba(227,190,114,.12);
+}
+.stay-tip h4{font-size:14.5px;letter-spacing:.14em;color:var(--jin);margin-bottom:8px;}
+.stay-tip li{
+  list-style:none;font-size:13.5px;color:var(--mo);
+  padding:3px 0 3px 24px;position:relative;
+}
+.stay-tip li::before{
+  content:"芽";position:absolute;left:0;top:.42em;
+  font-size:11px;color:#FFF6E6;background:var(--zhu);
+  border-radius:50%;width:16px;height:16px;line-height:16px;text-align:center;
+}

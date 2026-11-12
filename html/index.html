@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>首页 · 长沙 · 星城风物志</title>
+<meta name="description" content="山水洲城，把烟火与书卷都写进江风里的一座城。">
+<meta name="keywords" content="长沙文旅,星城风物志,岳麓山,橘子洲,湘绣,花鼓戏,长沙美食,网页设计作业">
+<link rel="icon" type="image/svg+xml" href="../images/logo-mark.svg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/extra.css">
+<link rel="stylesheet" href="../css/ip.css">
+<link rel="stylesheet" href="../css/outfit.css">
+<link rel="stylesheet" href="../css/site.css">
+<script>
+document.documentElement.classList.add("js");
+window.__CURRENT__="home";
+try{if(sessionStorage.getItem("cswf_entered")==="1"){document.documentElement.classList.add("entered");}}catch(e){}
+</script>
+</head>
+<body data-current="home">
+<!-- ===== 封面 ===== -->
+<section class="cover" id="cover" data-page-node-id="TIMDz1T0rDDMr6pQfp8pcB">
+  <div class="cover-inner" data-page-node-id="XqlnyFCugFz2jREG59FZrh">
+    <div class="cover-seal" data-page-node-id="rpnDWYxNjpJTk2ZLAkHoYA"><img class="brand-mark" src="../images/logo-mark.svg" alt="星城风物志 · 长沙文旅标识"></div>
+    <div class="cover-seal-cap">星 城</div>
+    <h1 class="cover-title" data-page-node-id="v40bnXbODzG6ltQFmymkio">长沙</h1>
+    <p class="cover-sub" data-page-node-id="zEM9jM7BMrhvepBY6VCIpt">山水洲城 · 风物志</p>
+    <p class="cover-poem" data-page-node-id="vwYhYUWb53DeTUpT4lBbgf">独立寒秋，湘江北去，橘子洲头。<br data-page-node-id="DN5nnGNCbCaAQBAH064gqu">一座把烟火与书卷都写进江风里的城。</p>
+    <button class="cover-enter" id="enterBtn" data-page-node-id="FPvUavKTXHyAVqg0XChjKE">入 城</button>
+  </div>
+</section>
+
+
+<!-- ===== 登录 ===== -->
+<div class="login hide" id="login" data-page-node-id="8KzBUKY7EoMQ48p19xlqLU">
+  <div class="login-box" data-page-node-id="FzS0TU2OQ7viADQNi59CMH">
+    <img class="brand-mark login-mark" src="../images/logo-mark.svg" alt="星城风物志标识">
+    <h2 data-page-node-id="c7s3ScmFEjybn9a4teY5CD">登临星城</h2>
+    <p class="tip" data-page-node-id="VjNwjPyZRofNEWKXXECpuj">欢迎来到长沙！</br>三湘四水，相约湖南</p>
+    <div class="ava-row" data-page-node-id="90VRsTpWTX4iqrkBOTM2iQ">
+      <div class="ava" id="avaPreview" data-page-node-id="IpSnCdCVX6BbfghwDGNqO6"></div>
+      <small data-page-node-id="dswyzCasawpE5drbjpvHMD">点击左侧方块上传头像<br data-page-node-id="3eOoaHM8zI24NNHdOEU8j2">更换头像</small>
+      <input type="file" id="avaFile" accept="image/*" hidden data-page-node-id="CmJUNyzGs5pEfWoV0TwBtZ">
+    </div>
+    <div class="field" data-page-node-id="TqowuZLzlUaLyxlYSA7MKf"><label data-page-node-id="vbI0HnHRJIRvjM18zNKBFJ">姓名</label><input id="fName" type="text" placeholder="请输入姓名" maxlength="12" data-page-node-id="7pUWL5YodXppbM3GDrPlj1"></div>
+    <div class="field" data-page-node-id="pRcsbgzOYjhG6f3mlGGVgp"><label data-page-node-id="F3H4Qp2oSbB1FSvwUxzgD2">性别</label>
+      <select id="fGender" data-page-node-id="gEzMHXJwoCzUNwpmR4vgnG"><option data-page-node-id="UNYr9CTCkbL9EEpD6TghEQ">男</option><option data-page-node-id="DwlbkSFVE3dEgQcCcxC79A">女</option><option data-page-node-id="pQTmnKJJ1DFBzVGY5q1eov">保密</option></select>
+    </div>
+    <div class="field" data-page-node-id="CdPAj26SOktHCSWmWPmAaV"><label data-page-node-id="lUBxxUgXyL5XQf0Kywng1E">手机号码</label><input id="fPhone" type="tel" placeholder="11 位手机号" maxlength="11" data-page-node-id="GtJ5u7UP6zvgVzj3CtTywB"></div>
+    <div class="field" data-page-node-id="hzyVvT7Y70s05PAXlYCLuT"><label data-page-node-id="JSNObmjUDWGXMy0pE95AHU">省份</label><select id="fProvince" data-page-node-id="3x4wFhRIWYW2FFeZjZ8KVH"></select></div>
+    <button class="login-go" id="loginGo" data-page-node-id="2mMbzj6Ze6GAqQjgIKQoNb">步 入 长 沙</button>
+    <button class="login-skip" id="loginSkip" data-page-node-id="9rSvLVWxNLCAyK0mfhtwP8">先 随 便 逛 逛</button>
+  </div>
+</div>
+
+
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ===== 导航（原版红金书卷样式 · 整行居中） ===== -->
+<header class="nav" id="nav">
+  <button class="ip-entry" id="ipEntry" type="button" title="小戏芽 · 星城 AI 导游（点击对话）" aria-label="打开小戏芽智能导游">
+    <span class="ip-ava"><img src="../images/ip/ip-avatar.png" alt="花鼓戏小旦 IP 小戏芽"></span>
+    <span class="ip-txt"><b>小戏芽</b><small>星城 AI 导游</small></span>
+    <span class="ip-badge">AI</span>
+  </button>
+  <div class="nav-brand" data-page-node-id="OAcJYAZIoFEEcSV98wAB1Q"><img class="brand-mark nav-mark" src="../images/logo-mark.svg" alt=""><span>长沙 · 风物志<small data-page-node-id="TfEHJIn10RG4tG6Jeyvxjy">CHANGSHA</small></span></div>
+  <nav class="nav-center" aria-label="主导航">
+      <a class="nav-item on" href="index.html" data-page="home" aria-current="page">首页</a>
+      <a class="nav-item" href="spots.html" data-page="spots">景点</a>
+      <a class="nav-item" href="heritage.html" data-page="heritage">非遗</a>
+      <a class="nav-item" href="routes.html" data-page="routes">攻略</a>
+      <a class="nav-item" href="check.html" data-page="check">打卡</a>
+      <a class="nav-item" href="food.html" data-page="food">美食签</a>
+      <a class="nav-item" href="night.html" data-page="night">氛围</a>
+      <a class="nav-item" href="outfit.html" data-page="outfit">穿搭</a>
+      <a class="nav-item" href="stay.html" data-page="stay">居住</a>
+      <a class="nav-item" href="me.html" data-page="me">旅程日志</a>
+  </nav>
+</header>
+
+<!-- ===== 本卷内容（原版） ===== -->
+<main class="page on" id="page-home" data-page-node-id="u6hB0jI2JVZmEH2t8CHBb5">
+  <div class="wrap" data-page-node-id="3hNxg24L83F1e3T9FqBeL4">
+    <div class="sec-head" data-page-node-id="Ynl5S6FBn9N8aYfLSg0QIn">
+      <span class="sec-num" data-page-node-id="JtqqQFWeisjV0h9CziGjxs">卷一</span>
+      <h2 class="sec-title" data-page-node-id="gWAbjkpGMpPRJk4PSOuT3z">山水洲城</h2>
+      <div class="sec-line" data-page-node-id="R83ncfRvwDvZvWU8lGkFFq"></div>
+      <span class="sec-note" data-page-node-id="icAEErKKTZiYtiSFr5c93d">湘江穿城 · 岳麓为屏</span>
+    </div>
+
+    <div class="carousel" id="carousel" data-page-node-id="ORlaI2icPhL3wU3e9x5oEJ">
+      <div class="car-track" id="carTrack" data-page-node-id="HZzsXPogfi8dwKg2YZbddd">
+        <div class="car-slide bg-img img-juzizhou" data-page-node-id="Vh5Q8zuQbMBMAxW5IOFxno"><div class="car-cap" data-page-node-id="63DAlFCfbVr2ApgQx9eHvP">橘子洲<span data-page-node-id="v8hu2oWUbn2FZFGGFZcdLr">湘江北去 · 洲头独立</span></div></div>
+        <div class="car-slide bg-img img-yuelu" data-page-node-id="SrNXGwm99RCI2XPzgs7Imh"><div class="car-cap" data-page-node-id="Gqhpaz3H7h5Itws9Q9MCqZ">岳麓山 · 爱晚亭<span data-page-node-id="s3JYOZHGW6jNFrlatvhVgG">停车坐爱枫林晚</span></div></div>
+        <div class="car-slide bg-img img-dufu" data-page-node-id="e9GQYyLgBhk2rCwsQ90vWF"><div class="car-cap" data-page-node-id="WQhvv5aSBMY2u3yASne5kT">杜甫江阁<span data-page-node-id="DYkIeciLoLFaUpME5i3Mi4">一江灯火 · 半城倒影</span></div></div>
+        <div class="car-slide bg-img img-tianxin" data-page-node-id="iF7wUPz3zKhhP5n9PnrLKz"><div class="car-cap" data-page-node-id="j3f4sqCFXIkvOwqxbr8mrp">天心阁<span data-page-node-id="0xDXLLMdetWsBHXJRxpjFQ">城砖压着三百年</span></div></div>
+        <div class="car-slide bg-img img-tongguan" data-page-node-id="DZERQAXy2QvWxwM4B0Pn72"><div class="car-cap" data-page-node-id="deEim6pqlON48LcZ6FZSIQ">铜官窑古镇<span data-page-node-id="140CnFqQSP5xUOl98CSAfW">唐风 · 窑火 · 湘江</span></div></div>
+        <div class="car-slide bg-img img-taiping" data-page-node-id="FS0hnpKlpCB4HhwKa5BWpq"><div class="car-cap" data-page-node-id="hV0n2Q8tfz7zqjIZ3lRwin">太平老街<span data-page-node-id="QywT1LvMF9lNL9QDc0IPXG">石板路与小吃摊</span></div></div>
+      </div>
+      <button class="car-arrow car-prev" id="carPrev" aria-label="上一张" data-page-node-id="mPJhgY795ctlWICqMpUCFf">‹</button>
+      <button class="car-arrow car-next" id="carNext" aria-label="下一张" data-page-node-id="nzjKTHXW7yrWJvqZlLHJsV">›</button>
+      <div class="car-dots" id="carDots" data-page-node-id="OVVdmGGkabTplVJcEaQpCi"><i class="on" data-page-node-id="elWHRHpIjF1zHLZEzJNR1A"></i><i data-page-node-id="Byb2hfp85r1OMIxtVg9Yfs"></i><i data-page-node-id="1wnaYWKlocdjrgGfe1lQA2"></i><i data-page-node-id="f50kHz6N44gZcgFRiAUjcL"></i><i data-page-node-id="f48duaqVJWoU640xOuIZGB"></i><i data-page-node-id="UfJHtfEu2fOFZZlaPSBpd4"></i></div>
+    </div>
+
+    <div class="facts" data-page-node-id="oJHpuCGTvD6gns8e5NKbb7">
+      <div class="fact" data-page-node-id="y5nnN9uOxyzbjjkWTeHvz9"><h4 data-page-node-id="CeuHPq0ex27LCp40Ds9yDE">三千年城址未改</h4><p data-page-node-id="2qSW04zKJdQLqase8od3ZI">长沙自春秋战国即为楚南重镇，城名与城址两千余年相沿，走一趟老城巷，脚下就是层层叠压的朝代。</p></div>
+      <div class="fact" data-page-node-id="vdykGUwsWz54hFMP55yHup"><h4 data-page-node-id="nHJf79Y6DokafnLamBdb9y">一江两岸的夜</h4><p data-page-node-id="1wYXvVXFrp7jVfX3d5ROOT">湘江把城分成河东河西，入夜后两岸灯火连成一线，江阁、大桥与摩天楼在江面上各得一半倒影。</p></div>
+      <div class="fact" data-page-node-id="ADBTYRiuf9xTRFyL5VsMS4"><h4 data-page-node-id="kYArJVcfmeoXGv313v4FD1">辣得有层次</h4><p data-page-node-id="fUstU7c5VbbPJ1YIKHz0md">长沙的辣不是一味猛冲：剁椒的鲜、白椒的烈、酸辣的爽，配一碗米粉，才是本地人的清早。</p></div>
+    </div>
+
+    <div class="sec-head" data-page-node-id="IjplaNtjd4VebeyaYkk4sW">
+      <span class="sec-num" data-page-node-id="MnGF7ATqLGDp2otXNBb0j0">抽签</span>
+      <h2 class="sec-title" data-page-node-id="9TfVWGUhyEw3Hgh6z6FNPH">今日景点</h2>
+      <div class="sec-line" data-page-node-id="PIFsg6ny30Na8LAJVPVdGk"></div>
+    </div>
+
+    <div class="luck" data-page-node-id="4yfBr6k9YvvSnzeUOfzcfs">
+      <div class="luck-img bg-img" id="luckImg" data-page-node-id="VmuYEKC5jyGQ5R2XUqNZeF"></div>
+      <div class="luck-body" data-page-node-id="THIgZWYaGbkE3r0rX8UuKz">
+        <h3 id="luckName" data-page-node-id="z5wbEsV73RIxDMILAIsy9S"></h3>
+        <p id="luckDesc" data-page-node-id="LTskhw7XdoFse75qQjm6R3"></p>
+        <div data-page-node-id="jwYoNOUsz9CXXWWBBWHj02"><button class="btn-ghost" id="luckAgain" data-page-node-id="xsoeUNse8QrdzVdIhO6ILW">随机抽取景点叭</button></div>
+      </div>
+    </div>
+
+    <div class="sec-head" data-page-node-id="iZ2IfAAr188azZqeYNQrTr">
+      <span class="sec-num" data-page-node-id="Zo9iqqBgF5V3GIHDxzrX13">荐</span>
+      <h2 class="sec-title" data-page-node-id="TRU5fcKleE09Zb216uoP0r">人气去处</h2>
+      <div class="sec-line" data-page-node-id="83VAScFUM6zkPoBNjcuO06"></div>
+      <span class="sec-note" data-page-node-id="9BDmMmi7U9t9GyTvMAI5X4">本地人来了也要排队</span>
+    </div>
+    <div class="grid-spots" id="homeSpots" data-page-node-id="EXAzjtg5wtiAAwibCSxC95"></div>
+
+    <!-- ===== 新增：星城影像馆（拓展图片 · 可筛选 · 点击放大） ===== -->
+    <section class="x-block guide-block" id="gal-block" aria-label="星城影像馆">
+      <div class="x-head">
+        <div>
+          <div class="x-eyebrow">PHOTO ARCHIVE · 卷一附</div>
+          <h3>星城影像馆 · 十六帧长沙</h3>
+        </div>
+        <p>点一下分类，再点图片放大看 · 支持 ← → 键切换</p>
+      </div>
+      <div class="gal-bar" id="galBar"><span>影像分类</span><span class="gal-count" id="galCount"></span></div>
+      <div class="gal-grid" id="galGrid"></div>
+      <div class="gal-note">
+        <b>影像小记</b>　这一组照片把长沙拆成五类：山水看湘江与洲头，古建看书院寺阁，市井看老街白烟，非遗看针线锣鼓与铁花，食味看一锅滚油。点击任意一帧可放大细看，配合「卷二 · 十八处必到」与「卷三 · 指尖上的长沙」一起读，画面里的地名就都对得上了。
+      </div>
+    </section>
+
+    <!-- ===== 新增：测一测你是哪种长沙人 ===== -->
+    <section class="x-block guide-block" id="quiz-block" aria-label="测一测你是哪种长沙人">
+      <div class="x-head">
+        <div>
+          <div class="x-eyebrow">A LITTLE QUIZ · 卷一附</div>
+          <h3>测一测 · 你是哪种长沙人</h3>
+        </div>
+        <p>四道题，凭直觉选就好</p>
+      </div>
+      <div class="quiz-shell" id="quizShell">
+        <div class="quiz-stage" id="quizStage"></div>
+        <div class="quiz-side">
+          <div class="quiz-progress">
+            <b id="quizNum">01 / 04</b>
+            <span>题 目 进 度</span>
+            <div class="quiz-dots" id="quizDots"></div>
+          </div>
+          <button class="btn-ghost" id="quizReset" type="button">重新开始</button>
+          <p class="quiz-side-note" id="quizLast">结果只记录在这台设备上，随时可以重测。</p>
+        </div>
+        <div class="quiz-result" id="quizResult">
+          <img id="quizResultImg" src="../images/gallery/posijie.jpg" alt="测试结果配图" class="quiz-result-img">
+          <div>
+            <div class="quiz-result-tag" id="quizResultTag">THE FIERY ONE</div>
+            <h4 id="quizResultName">—</h4>
+            <p id="quizResultText">—</p>
+            <div class="quiz-result-rec" id="quizResultRec">—</div>
+            <div class="quiz-result-btns">
+              <button class="solid" id="quizGo" type="button" data-goto="food">去看看推荐 →</button>
+              <button id="quizAgain" type="button">再测一次</button>
+              <button id="quizCopy" type="button">复制结果</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot" data-page-node-id="xH9ozZKe15m4OpwPnMuPJP">
+      <button data-page="spots" data-page-node-id="Exvu1So0z9aRDCggxipcMs">看全部景点</button>
+      <button id="backCover1" data-page-node-id="ANFewhazQprsbGSbO4qXHv">回到封面</button>
+    </div>
+  </div>
+</main>
+
+<!-- ===== 其余九卷由顶部导航直接进入 ===== -->
+<main class="page" id="page-spots" aria-label="景点导览"></main>
+<main class="page" id="page-heritage" aria-label="非遗名录"></main>
+<main class="page" id="page-routes" aria-label="行程攻略"></main>
+<main class="page" id="page-check" aria-label="打卡清单"></main>
+<main class="page" id="page-food" aria-label="美食签"></main>
+<main class="page" id="page-night" aria-label="氛围世界"></main>
+<main class="page" id="page-outfit" aria-label="四季穿搭"></main>
+<main class="page" id="page-stay" aria-label="住在星城"></main>
+<main class="page" id="page-me" aria-label="旅程日志"></main>
+
+<!-- ===== 全站页脚：十个页面共用，滚到任意页面底部均可见 ===== -->
+<footer class="footer" id="siteFooter" data-page-node-id="gTlRFg7lQRyHMjTJv9Zylf">
+  <div class="footer-ridge" aria-hidden="true" data-page-node-id="DzwWlNTv8rEQssniB7iFdb"></div>
+  <div class="container" data-page-node-id="6bKFP2k4Iw9LbNHyp27GEA">
+
+    <div class="footer-top" data-page-node-id="OblNV4YtSuC96Zdoq7rXUz">
+      <div class="footer-brand" data-page-node-id="4K3XVBh8aiQb0UFgaXbtlg">
+        <span class="footer-seal" data-page-node-id="CXcHXpfLWlVXjbzNEhCnvH"><img class="brand-mark" src="../images/logo-mark.svg" alt="星城风物志标识"></span>
+        <div data-page-node-id="uJ9CRWXBW1buiOI9BmKFB8">
+          <div class="footer-brand-name" data-page-node-id="SqhowwT5WN6riYZeHYo2jL">长沙 · 星城风物志</div>
+          <div class="footer-brand-sub" data-page-node-id="fzt86g1UrdTo8DuhpyTmiD">CHANGSHA · 山水洲城 / 一卷风物</div>
+        </div>
+      </div>
+      <div class="footer-now" data-page-node-id="GSuuRHBFf32S6EW29w69IB">当前所在 · <b id="footerCurrent" data-page-node-id="7c2bCoDfesip7kyNqbcYGd">卷一 · 山水洲城</b></div>
+    </div>
+
+    <div class="footer-cols" data-page-node-id="dUmPsZYXRkwNGwgSJR4emh">
+      <div class="footer-col" data-page-node-id="V6agwIq5EIRM0vRCy8UESm">
+        <h5 data-page-node-id="I14jWhXp021H9b6in44rML">关于我们</h5>
+        <img class="footer-logo" src="../images/logo-light.svg" alt="星城风物志 · 长沙文旅">
+        <p data-page-node-id="h7G4uL6x1iqDekNS3ijCDP">一卷写给长沙的风物志：记录山水洲城的街巷、湖湘非遗的手艺与满城烟火，让传统走进当代旅途。</p>
+        <div class="footer-stat" data-page-node-id="6Aa3c2BEmQ2jnrYF8Prb6n">
+          <span data-page-node-id="biNsBLEAuDGVwqqnvM3DdO"><b data-page-node-id="uDxaxyHEVMk8Yso80Fq64Y">18</b> 处景点</span><span data-page-node-id="YBrF3lCQHuAL7MwCPB9fD1"><b data-page-node-id="arWLAiyFeBMVkRztUTEM1g">11</b> 项非遗</span><span data-page-node-id="I2o7NsL9aCXMPWzVFduHzL"><b data-page-node-id="KgK3ABVszPWVKAG1fEQOFI">30</b> 味美食</span>
+        </div>
+      </div>
+
+      <div class="footer-col" data-page-node-id="OmENwDnVwPfwvZaap4Obxk">
+        <h5 data-page-node-id="OEc7GSiiTb6rp62IUuMCx1">快速入口</h5>
+        <ul class="footer-links" data-page-node-id="FEPIlMl498eAqJMGe5JYsc">
+          <li data-page-node-id="fw4u9CMc9xdp95CMty8IQl"><a href="spots.html" data-page="spots" data-page-node-id="eY7wkVmYrWx1OnGOX5IXMb">景点导览 <em data-page-node-id="K3COvO51aA6DEaJcslCPI2">十八处必到</em></a></li>
+          <li data-page-node-id="jpH6qFOOsTDtOvLUT8r3co"><a href="heritage.html" data-page="heritage" data-page-node-id="ws7hhwtZ6pLG7WXADNiMYs">非遗名录 <em data-page-node-id="uZO4fRBBSn1nQOcrBkd283">指尖长沙</em></a></li>
+          <li data-page-node-id="9biryFgbFIiYz13YDZ5Yaj"><a href="routes.html" data-page="routes" data-page-node-id="tt4LXXHdmlAfVC8GM8W5fG">行程攻略 <em data-page-node-id="N6XdovxFJsbyDlVVCcwwTx">小火车地图</em></a></li>
+          <li><a href="night.html" data-page="night">年轻人的氛围世界 <em>六种氛围 · 六杯特调</em></a></li>
+          <li data-page-node-id="fLU6gI4El98oXar3z1fXSn"><a href="food.html" data-page="food" data-page-node-id="waJExpPYv8W5SfHmsTMVf1">美食体验 <em data-page-node-id="zjAtAOI8vty4xdm2Ke6IFC">30 味签筒</em></a></li>
+          <li data-page-node-id="j73YuZPoppQtpBNFhTjxzj"><a href="check.html" data-page="check" data-page-node-id="xyH5AAuT2HDVg4VgNjmLi4">打卡清单 <em data-page-node-id="4HzRSyycSqdY472crvoauh">进度留存</em></a></li>
+          <li><a href="me.html" data-page="me">我的星城 <em>足迹与日记</em></a></li>
+          <li><a data-goto="home:gal-block">星城影像馆 <em>十六帧 · 可放大</em></a></li>
+          <li><a data-goto="home:quiz-block">长沙人测试 <em>四道题</em></a></li>
+          <li><a data-goto="me:pc-block">星城明信片 <em>可下载</em></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" data-page-node-id="5j2zQf8wtAEg9afAHpHPsY">
+        <h5 data-page-node-id="DqkhrZ3hMJ705ECMQvrHye">联系方式</h5>
+        <p class="footer-contact" data-page-node-id="VNtkQHzxtzhr03QcGIKjyZ">
+          <span data-page-node-id="BPVktKpUz96ofKPazSqM5g">地址</span>湖南省长沙市<br data-page-node-id="3FWsIPgOf2IE4axiQqyL1Q">
+          <span data-page-node-id="Ze9f7vm7D4UaDEJAVD8JBg">邮箱</span>2592288144@qq.com<br data-page-node-id="wONfVp1BovDdxpgPrKFybI">
+          <span data-page-node-id="Qq5pWAkk5AfPAmrnKbCvfe">电话</span>13787155891
+        </p>
+
+      </div>
+
+      <div class="footer-col" data-page-node-id="dWBDE4If3PPIlunh03OiOf">
+        <h5 data-page-node-id="3jufZYUQFCmfMhOyWhcjkD">友情链接</h5>
+        <ul class="footer-friends" data-page-node-id="2pLMWNvA4ACNyQj5Npv6Ww">
+          <li data-page-node-id="wmnKIrY5WbOmOu8r25TAU9">中国非物质文化遗产网</li>
+          <li data-page-node-id="4lhL6jQheurGNPlvYu8rd5">湖南省文化和旅游厅</li>
+          <li data-page-node-id="GpqF8GJONpcCK5SuuBEoNf">长沙市文化旅游广电局</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-actions" data-page-node-id="R89tynPYLzTI3sKk6cFeoA">
+      <button id="footerToTop" data-page-node-id="odLRzgLoIN7dJ9U4ftXwnk">↑ 回到顶部</button>
+      <button id="footerToCover" data-page-node-id="Rspkj3mI4DGWGBDyBf2Dml">回到封面</button>
+      <button data-page="home" data-page-node-id="KKp4HMmq9TP9GIdjEuea55">回首页</button>
+    </div>
+
+    <div class="footer-bottom" data-page-node-id="HBIHJgUzdC8lpwbM1ssXK3">
+      <span data-page-node-id="38JpKeDpyCxmKttmCfX2OR">长沙 · 星城风物志 © <span id="footerYear" data-page-node-id="PwQAqbYGfBqXMN2f8sD8VQ">2026</span> &nbsp;|&nbsp; 本页面为朱茜期末作业</span>
+      <span data-page-node-id="7uHAQ8dQX93yz7iqljMU3S">实景图片来源于公开网络，版权归原作者所有。</span>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ===== 景点详情弹窗 ===== -->
+<div class="modal" id="modal" data-page-node-id="WC1Zv8zYyGvznYIpRYxnx4">
+  <div class="modal-box" data-page-node-id="UbDfT426fCWGEFEng9vmpV">
+    <div class="modal-img bg-img" id="modalImg" data-page-node-id="ZTEIUAHFeQvdfhNbsQroIZ"></div>
+    <div class="modal-inner" data-page-node-id="ooz36iyjXlwaYHuH2h3ga9">
+      <p class="modal-tag" id="modalTag" data-page-node-id="aG3sjkCJOSgf0v4eQVwlBJ"></p>
+      <h3 id="modalName" data-page-node-id="jaW6lnqqPocAqUyuiqOoYG"></h3>
+      <p id="modalText" data-page-node-id="LC4GzzEjlqG3C7PwB0ZiDX"></p>
+      <button class="modal-close" id="modalClose" data-page-node-id="K7W1Tv7FNHbpuREbuxANqo">关 闭</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" data-page-node-id="DOAjurnVABjEgzb1j8Mcr3"></div>
+
+<!-- ===== 小戏芽 · 星城 AI 导游（智谱 GLM + 全站网页知识库） ===== -->
+<aside class="ip-panel" id="ipPanel" aria-hidden="true" aria-label="小戏芽智能导游">
+  <div class="ip-head">
+    <img class="ip-head-ava" src="../images/ip/ip-avatar.png" alt="小戏芽">
+    <div class="ip-head-txt"><strong>小戏芽</strong><span>星城 AI 导游 · 花鼓戏小旦</span></div>
+    <span class="ip-status" id="ipStatus">连接中</span>
+    <button class="ip-icon" id="ipSettings" type="button" title="AI 接口设置" aria-label="AI 接口设置">&#9881;</button>
+    <button class="ip-icon" id="ipClose" type="button" title="收起" aria-label="收起">&times;</button>
+  </div>
+  <div class="ip-banner"><span class="ip-seal">GLM</span><span>读遍全站网页的 AI 导游 · 回答附资料出处</span></div>
+  <div class="ip-log" id="ipLog"></div>
+  <div class="ip-quick" id="ipQuick">
+    <button class="ip-chip" type="button">花鼓戏是什么</button>
+    <button class="ip-chip" type="button">长沙三日怎么玩</button>
+    <button class="ip-chip" type="button">必吃美食</button>
+    <button class="ip-chip" type="button">橘子洲怎么去</button>
+    <button class="ip-chip" type="button">非遗有哪些</button>
+  </div>
+  <form class="ip-form" id="ipForm">
+    <input id="ipText" type="text" placeholder="问小戏芽：长沙怎么玩？" autocomplete="off" maxlength="200">
+    <button type="submit">发送</button>
+  </form>
+  <div class="ip-foot">密钥仅存服务端 · <a href="routes.html#sec-faq" id="ipWeb">行前常问 ↗</a></div>
+
+  <section class="ip-cfg" id="ipConfig" hidden>
+    <button class="ip-cfg-close" id="ipCfgClose" type="button" aria-label="关闭">&times;</button>
+    <h3>AI 接口设置</h3>
+    <p class="ip-cfg-sub">默认使用本站同源的 <code>/api/chat</code>：由服务端先从网页知识库检索资料，再交给智谱 <code>glm-4-flash</code> 作答。API Key 只保存在服务端，网页里看不到。</p>
+    <label class="ip-field"><span>接口地址（本地调试可改为代理地址）</span><input id="ipEndpoint" type="text" spellcheck="false"></label>
+    <div class="ip-cfg-btns">
+      <button class="ip-btn ip-btn-main" id="ipSave" type="button">保存并连接</button>
+      <button class="ip-btn ip-btn-ghost" id="ipClear" type="button">恢复默认</button>
+    </div>
+    <p class="ip-note">
+      <b>线上：</b>部署在 Cloudflare 后，接口由 Pages Functions 提供，密钥通过 Secret 注入；回答末尾会附上对应的网页链接。<br>
+      <b>本地：</b>运行 <code>npm run dev</code>（或双击 <code>tools/start-proxy.bat</code>），再访问 <code>http://127.0.0.1:8788/</code> 即可获得同样的效果。<br>
+      <b>离线：</b>接口不可用时自动回退内置长沙文旅知识库，问了永远有回应；双击 HTML 文件也能演示。
+    </p>
+  </section>
+</aside>
+
+<button class="xiu-toggle" id="xiuToggle" type="button" aria-pressed="true" title="显示 / 收起湘绣背景纹样">
+  <img src="../images/xiangxiu/xiu-medallion.svg" alt=""><span id="xiuToggleText">绣纹 · 开</span>
+</button>
+
+
+<button class="to-top" type="button" aria-label="返回顶部">↑</button>
+<script src="../js/script.js"></script>
+<script src="../js/extra.js"></script>
+<script src="../js/ip.js"></script>
+<script src="../js/outfit.js"></script>
+<script src="../js/site.js"></script>
+</body>
+</html>

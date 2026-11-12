@@ -1,0 +1,4 @@
+# 复制为 .dev.vars 后填入自己的密钥；该文件不会提交到 GitHub
+GLM_API_KEY=你的智谱APIKey
+# 需要语义检索时（先运行 npm run kb:embed）改为 1
+GLM_EMBEDDINGS=0

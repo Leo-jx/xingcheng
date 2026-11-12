@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* ============================================================
+   长沙 · 星城风物志 | 十页通用「滑动层」
+   外观、配色、内容、封面、登录、页脚一律沿用原版 css/style.css，
+   本文件只负责两件事：
+     1) 与「岳阳烧烤」一致的滑动方式（fixed 页头 / 滚动进度条 /
+        滚动入场 / 返回顶部 / 平滑滚动 / 锚点偏移）；
+     2) 顶部整行页头居中对齐（品牌居左、小戏芽居右、十项导航精确居中）。
+   10 个独立 HTML 共用，保证每页格式完全一致。
+   ============================================================ */
+
+html{scroll-behavior:smooth;scroll-padding-top:78px;}
+
+/* ---------- 滚动进度条 ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:9500;
+  background:linear-gradient(90deg,var(--zhu),var(--jin),var(--jin-liang));
+  box-shadow:0 0 10px rgba(184,137,59,.55);transition:width .08s linear;}
+
+/* ---------- 返回顶部 ---------- */
+.to-top{position:fixed;right:24px;bottom:28px;width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(184,137,59,.55);background:var(--zhu);color:#FFF6E6;
+  font-size:19px;cursor:pointer;z-index:900;box-shadow:0 12px 28px -14px rgba(142,28,28,.9);
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s;}
+.to-top.show{opacity:1;visibility:visible;transform:none;}
+.to-top:hover{background:var(--zhu-deep);transform:translateY(-3px);}
+
+/* ---------- 顶部整行居中（原版 .nav 的 fixed / 宣纸底 / 金线均保留） ---------- */
+.nav{justify-content:center;gap:8px;padding:0 20px;overflow-x:visible;
+  box-shadow:0 6px 18px -16px rgba(36,29,24,.7);}
+.nav-center{display:flex;align-items:center;justify-content:center;gap:2px;
+  flex:0 1 auto;min-width:0;}
+.nav-item{flex:0 0 auto;min-width:66px;padding:8px 10px;text-align:center;
+  font-size:13.5px;line-height:1.4;}
+.nav > .ip-entry{height:46px;margin:0;}
+.nav > .ip-entry .ip-ava{flex-basis:38px;width:38px;height:38px;}
+
+@media(min-width:1181px){
+  /* 品牌与小戏芽分列左右，十项导航精确居中、左右对称 */
+  .nav-brand{position:absolute;left:20px;top:50%;transform:translateY(-50%);
+    margin:0;padding-right:0;border-right:0;}
+  .nav > .ip-entry{position:absolute;right:20px;top:50%;transform:translateY(-50%);}
+  .nav-center{margin:0 auto;}
+}
+
+@media(max-width:1180px){
+  /* 窄屏回到原版流式横向滚动，保证十项都可达 */
+  .nav{justify-content:flex-start;overflow-x:auto;padding:0 12px;gap:6px;}
+  .nav-brand{position:static;transform:none;margin-right:6px;padding-right:12px;
+    border-right:1px solid var(--line);}
+  .nav > .ip-entry{position:static;transform:none;margin:0 10px 0 0;}
+  .nav-center{margin:0;flex:0 0 auto;}
+  .nav-item{min-width:0;padding:8px 9px;font-size:13px;}
+}
+@media(max-width:640px){
+  .nav > .ip-entry .ip-txt,.nav > .ip-entry .ip-badge{display:none;}
+  .nav > .ip-entry{padding:3px;}
+  .nav-brand small{display:none;}
+  .nav-brand{font-size:13px;}
+  .to-top{right:14px;bottom:18px;width:42px;height:42px;}
+}
+
+/* ---------- 滚动入场（只淡入，不改颜色与版式） ---------- */
+html.js .reveal{opacity:0;transform:translateY(18px);
+  transition:opacity .7s ease,transform .7s ease;}
+html.js .reveal.in{opacity:1;transform:none;}
+
+/* ---------- 封面：本次会话已入城则跨页不再重复遮挡 ---------- */
+html.entered .cover{display:none;}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}
+  html.js .reveal{opacity:1;transform:none;}
+}

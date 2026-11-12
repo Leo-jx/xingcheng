@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="560" viewBox="0 0 750 560" role="img" aria-label="腊味合蒸">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFCF6"/><stop offset="1" stop-color="#FFF3E1"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#E3BE72" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#E3BE72" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#B8893B" stroke-opacity=".1" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="750" height="560" fill="url(#paper)"/>
+  <rect width="750" height="560" fill="url(#grid)"/>
+  <rect x="18" y="18" width="714" height="524" rx="30" fill="none" stroke="#C3272B" stroke-opacity=".5" stroke-width="2"/>
+  <rect x="29" y="29" width="692" height="502" rx="22" fill="none" stroke="#E3BE72" stroke-opacity=".55" stroke-width="1"/>
+
+  <!-- 四角回纹 -->
+  <g fill="none" stroke="#E3BE72" stroke-width="2" stroke-opacity=".75" stroke-linecap="round">
+    <path d="M48 76 V52 H76"/><path d="M674 52 H702 V76"/>
+    <path d="M48 484 V508 H76"/><path d="M674 508 H702 V484"/>
+  </g>
+  <!-- 云纹 -->
+  <g fill="none" stroke="#C3272B" stroke-width="2" stroke-opacity=".3" stroke-linecap="round">
+    <path d="M92 122 q14 -14 28 0 q12 -11 24 0"/>
+    <path d="M606 122 q14 -14 28 0 q12 -11 24 0"/>
+  </g>
+
+  <text x="375" y="82" text-anchor="middle" font-size="17" letter-spacing="7" fill="#C3272B" font-family="STKaiti,KaiTi,Songti SC,serif">星 城 食 签 · 第 13 签</text>
+  <path d="M300 96 H450" stroke="#E3BE72" stroke-width="1.5" stroke-opacity=".8"/>
+
+  <!-- 中央圆章 -->
+  <circle cx="375" cy="258" r="168" fill="url(#halo)"/>
+  <circle cx="375" cy="252" r="122" fill="#FFFCF6" stroke="#C3272B" stroke-width="3"/>
+  <circle cx="375" cy="252" r="108" fill="none" stroke="#E3BE72" stroke-width="1.6" stroke-dasharray="5 7"/>
+  <!-- 碗与热气：手绘装饰，emoji 不可用时仍有图形 -->
+  <g fill="none" stroke="#E3BE72" stroke-width="2.4" stroke-opacity=".55" stroke-linecap="round">
+    <path d="M300 306 q75 66 150 0"/>
+    <path d="M292 306 H458"/>
+    <path d="M338 196 q-10 -14 0 -26 q10 -12 0 -22"/>
+    <path d="M375 190 q-10 -14 0 -26 q10 -12 0 -22"/>
+    <path d="M412 196 q-10 -14 0 -26 q10 -12 0 -22"/>
+  </g>
+  <text x="375" y="300" text-anchor="middle" font-size="112" font-family="Segoe UI Emoji,Apple Color Emoji,Noto Color Emoji,sans-serif">🍲</text>
+
+  <text x="375" y="424" text-anchor="middle" font-size="52" letter-spacing="9" fill="#C3272B" font-family="STKaiti,KaiTi,Songti SC,serif">腊味合蒸</text>
+  <text x="375" y="462" text-anchor="middle" font-size="20" letter-spacing="4" fill="#8A7660" font-family="Songti SC,serif">湘菜 · 蒸菜</text>
+
+  <!-- 印章 -->
+  <g transform="translate(632,414)">
+    <rect width="66" height="66" rx="10" fill="#C3272B" stroke="#E3BE72" stroke-width="2"/>
+    <rect x="5" y="5" width="56" height="56" rx="6" fill="none" stroke="#FFF3D6" stroke-opacity=".55" stroke-width="1"/>
+    <text x="33" y="30" text-anchor="middle" font-size="21" fill="#FFF3D6" font-family="STKaiti,KaiTi,serif">星</text>
+    <text x="33" y="53" text-anchor="middle" font-size="21" fill="#FFF3D6" font-family="STKaiti,KaiTi,serif">城</text>
+  </g>
+
+  <text x="375" y="510" text-anchor="middle" font-size="15" letter-spacing="5" fill="#9A8B76" font-family="Songti SC,serif">山 水 洲 城 · 一 城 烟 火</text>
+</svg>

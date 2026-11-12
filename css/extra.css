@@ -1,0 +1,255 @@
+/* ============================================================
+   星城风物志 · 扩展样式
+   新增：星城影像馆 / 趣味测试 / 明信片生成器 / 彩蛋
+   依赖 style.css 的色板变量与圆角变量，需在其后加载
+   ============================================================ */
+
+/* ---------- 通用：区块抬头 ---------- */
+.x-block{margin-top:38px;scroll-margin-top:82px;}
+.x-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;margin-bottom:16px;
+}
+.x-head .x-eyebrow{
+  font-family:Georgia,serif;font-size:10px;letter-spacing:.26em;color:var(--jin);
+}
+.x-head h3{font-size:1.55rem;letter-spacing:.12em;color:var(--zhu-deep);margin-top:2px;}
+.x-head p{font-size:12px;color:var(--hui);letter-spacing:.06em;}
+
+/* ---------- 一、星城影像馆 ---------- */
+.gal-bar{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding:12px 16px;margin-bottom:16px;
+  border:1px solid var(--line);border-radius:var(--r-md);
+  background:rgba(255,252,246,.85);
+}
+.gal-bar>span{font-size:11.5px;letter-spacing:.14em;color:var(--jin);margin-right:4px;}
+.gal-filter{
+  padding:6px 15px;border:1px solid var(--line);border-radius:var(--r-pill);
+  background:#FFFCF6;font-size:12.5px;letter-spacing:.08em;color:var(--hui);
+  transition:.22s;
+}
+.gal-filter:hover{border-color:var(--zhu);color:var(--zhu);}
+.gal-filter.on{background:var(--zhu);border-color:var(--zhu);color:#FFF6E6;box-shadow:0 8px 16px -10px rgba(142,28,28,.8);}
+.gal-count{margin-left:auto;font-size:11.5px;color:var(--hui);}
+
+.gal-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:var(--guide-gap,14px);
+}
+.gal-card{
+  position:relative;margin:0;overflow:hidden;cursor:zoom-in;
+  border:1px solid var(--line);border-radius:var(--r-md);
+  background:#FFFCF6;box-shadow:var(--soft-shadow);
+  transition:transform .28s,box-shadow .28s;
+}
+.gal-card:hover{transform:translateY(-4px);box-shadow:0 18px 32px -18px rgba(142,28,28,.6);}
+.gal-card>img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .6s;}
+.gal-card:hover>img{transform:scale(1.08);}
+.gal-card figcaption{
+  display:flex;flex-direction:column;gap:2px;
+  padding:9px 12px 11px;border-top:1px solid var(--line);
+}
+.gal-card figcaption b{font-size:13px;letter-spacing:.06em;color:var(--zhu-deep);}
+.gal-card figcaption span{font-size:11px;line-height:1.55;color:var(--hui);}
+.gal-card em{
+  position:absolute;top:9px;left:9px;font-style:normal;font-family:Georgia,serif;
+  font-size:10px;letter-spacing:.1em;padding:3px 9px;border-radius:var(--r-pill);
+  background:rgba(24,18,16,.62);color:#F8EFDC;
+}
+.gal-zoom{
+  position:absolute;top:9px;right:9px;width:27px;height:27px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:rgba(195,39,43,.9);color:#FFF6E6;font-size:15px;
+  opacity:0;transform:scale(.8);transition:.25s;
+}
+.gal-card:hover .gal-zoom{opacity:1;transform:scale(1);}
+.gal-note{
+  margin-top:14px;padding:12px 16px;border-left:3px solid var(--jin);
+  background:rgba(227,190,114,.12);border-radius:0 var(--r-sm) var(--r-sm) 0;
+  font-size:12px;line-height:1.9;color:var(--hui);
+}
+
+/* 灯箱 */
+.gal-lightbox{
+  position:fixed;inset:0;z-index:9500;display:none;
+  align-items:center;justify-content:center;flex-direction:column;
+  padding:24px;background:rgba(18,13,10,.94);
+}
+.gal-lightbox.on{display:flex;animation:galFade .25s ease both;}
+@keyframes galFade{from{opacity:0}to{opacity:1}}
+.gal-lightbox img{
+  max-width:min(1140px,94vw);max-height:76vh;object-fit:contain;
+  border:1px solid rgba(227,190,114,.55);
+  box-shadow:0 26px 70px rgba(0,0,0,.7);
+  border-radius:var(--r-sm);
+}
+.gal-lb-cap{color:#F8EFDC;text-align:center;margin-top:14px;max-width:760px;}
+.gal-lb-cap b{display:block;font-size:17px;letter-spacing:.12em;}
+.gal-lb-cap span{display:block;font-size:12.5px;line-height:1.8;color:rgba(248,239,220,.72);margin-top:4px;}
+.gal-lb-num{font-family:Georgia,serif;font-size:11px;letter-spacing:.2em;color:var(--jin-liang);margin-top:8px;}
+.gal-lb-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:46px;height:64px;font-size:32px;color:#F8EFDC;
+  background:rgba(255,252,246,.08);border:1px solid rgba(227,190,114,.35);
+  border-radius:var(--r-sm);transition:.22s;
+}
+.gal-lb-btn:hover{background:var(--zhu);border-color:var(--zhu);}
+.gal-lb-prev{left:20px;} .gal-lb-next{right:20px;}
+.gal-lb-close{
+  position:absolute;top:20px;right:24px;width:40px;height:40px;font-size:22px;
+  color:#F8EFDC;border:1px solid rgba(227,190,114,.5);border-radius:50%;transition:.22s;
+}
+.gal-lb-close:hover{background:var(--zhu);border-color:var(--zhu);}
+.gal-lb-tip{position:absolute;bottom:16px;font-size:11px;letter-spacing:.12em;color:rgba(248,239,220,.5);}
+
+/* ---------- 二、测一测你是哪种长沙人 ---------- */
+.quiz-shell{
+  display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:20px;
+  padding:24px;border:1px solid var(--line);border-radius:var(--r-lg);
+  background:linear-gradient(125deg,rgba(255,252,246,.97),rgba(246,239,224,.9));
+  box-shadow:var(--soft-shadow);position:relative;overflow:hidden;
+}
+.quiz-shell::after{
+  content:"";position:absolute;right:-70px;bottom:-80px;width:230px;height:230px;
+  background:url("../images/xiangxiu/xiu-medallion.svg") center/contain no-repeat;
+  opacity:.09;pointer-events:none;
+}
+.quiz-stage{position:relative;z-index:1;min-height:246px;}
+.quiz-kicker{font-family:Georgia,serif;font-size:10px;letter-spacing:.26em;color:var(--jin);}
+.quiz-q{font-size:1.35rem;letter-spacing:.06em;color:var(--zhu-deep);margin:6px 0 4px;}
+.quiz-hint{font-size:12px;color:var(--hui);margin-bottom:16px;}
+.quiz-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.quiz-opt{
+  display:flex;align-items:center;gap:10px;text-align:left;
+  padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-sm);
+  background:#FFFCF6;font-size:13px;line-height:1.6;color:var(--mo);transition:.22s;
+}
+.quiz-opt:hover{border-color:var(--zhu);color:var(--zhu);transform:translateX(3px);box-shadow:0 8px 18px -12px rgba(142,28,28,.9);}
+.quiz-opt i{
+  flex:0 0 auto;width:22px;height:22px;border-radius:50%;
+  border:1px solid var(--jin);display:flex;align-items:center;justify-content:center;
+  font-style:normal;font-family:Georgia,serif;font-size:11px;color:var(--jin);
+}
+.quiz-side{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;}
+.quiz-progress{
+  padding:14px;border:1px dashed var(--jin);border-radius:var(--r-sm);
+  background:rgba(255,252,246,.7);text-align:center;
+}
+.quiz-progress b{display:block;font-family:Georgia,serif;font-size:26px;color:var(--zhu);line-height:1.2;}
+.quiz-progress span{font-size:11px;letter-spacing:.1em;color:var(--hui);}
+.quiz-dots{display:flex;justify-content:center;gap:6px;margin-top:10px;}
+.quiz-dots i{width:7px;height:7px;border-radius:50%;background:var(--xuan-deep);border:1px solid var(--line);}
+.quiz-dots i.on{background:var(--zhu);border-color:var(--zhu);}
+.quiz-side .btn-ghost{width:100%;text-align:center;}
+.quiz-side-note{font-size:11.5px;line-height:1.8;color:var(--hui);padding:0 4px;}
+
+.quiz-result{
+  position:relative;z-index:1;display:none;
+  grid-template-columns:180px minmax(0,1fr);gap:22px;align-items:center;
+}
+.quiz-result.on{display:grid;animation:galFade .4s ease both;}
+.quiz-result-img{
+  width:180px;height:200px;object-fit:cover;border-radius:var(--r-md);
+  border:1px solid var(--jin);box-shadow:var(--soft-shadow);
+}
+.quiz-result-tag{font-family:Georgia,serif;font-size:10px;letter-spacing:.24em;color:var(--jin);}
+.quiz-result h4{font-size:1.75rem;letter-spacing:.1em;color:var(--zhu-deep);margin:4px 0 8px;}
+.quiz-result p{font-size:13px;line-height:1.95;color:var(--hui);max-width:600px;}
+.quiz-result-rec{
+  display:inline-block;margin-top:10px;padding:5px 12px;font-size:11.5px;
+  border:1px solid var(--line);border-radius:var(--r-pill);color:var(--zhu-deep);background:#F7F0E1;
+}
+.quiz-result-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.quiz-result-btns button{
+  padding:9px 20px;border:1px solid var(--zhu);border-radius:var(--r-pill);
+  font-size:12.5px;letter-spacing:.1em;color:var(--zhu);transition:.22s;
+}
+.quiz-result-btns button:hover{background:var(--zhu);color:#FFF6E6;}
+.quiz-result-btns button.solid{background:var(--zhu);color:#FFF6E6;}
+.quiz-result-btns button.solid:hover{background:var(--zhu-deep);}
+.quiz-shell.result-on .quiz-stage,.quiz-shell.result-on .quiz-side{display:none;}
+.quiz-shell.result-on{grid-template-columns:1fr;}
+.quiz-shell.result-on .quiz-result{grid-column:1/-1;}
+
+/* ---------- 三、星城明信片生成器 ---------- */
+.pc-shell{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);
+  gap:24px;padding:24px;border:1px solid var(--line);border-radius:var(--r-lg);
+  background:rgba(255,252,246,.9);box-shadow:var(--soft-shadow);
+}
+.pc-preview{display:flex;flex-direction:column;align-items:center;gap:10px;}
+#pcCanvas{
+  width:100%;max-width:560px;height:auto;display:block;
+  border:1px solid var(--jin);border-radius:var(--r-sm);
+  box-shadow:0 16px 30px -20px rgba(36,29,24,.85);background:#F6EFE0;
+}
+.pc-tip{font-size:11.5px;color:var(--hui);letter-spacing:.06em;}
+.pc-form{display:flex;flex-direction:column;gap:14px;}
+.pc-field label{display:block;font-size:12px;letter-spacing:.1em;color:var(--zhu-deep);margin-bottom:7px;}
+.pc-field input[type=text]{
+  width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);
+  background:#FFFCF6;font:inherit;font-size:13px;color:var(--mo);
+}
+.pc-field input[type=text]:focus{outline:none;border-color:var(--zhu);}
+.pc-scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;}
+.pc-scene{
+  position:relative;padding:0;overflow:hidden;aspect-ratio:4/3;
+  border:2px solid transparent;border-radius:var(--r-sm);transition:.22s;
+}
+.pc-scene img{width:100%;height:100%;object-fit:cover;display:block;}
+.pc-scene.on{border-color:var(--zhu);box-shadow:0 0 0 2px rgba(195,39,43,.2);}
+.pc-scene span{
+  position:absolute;left:0;right:0;bottom:0;padding:3px 0;
+  font-size:10px;color:#FFF6E6;background:rgba(24,18,16,.6);
+}
+.pc-seals{display:flex;flex-wrap:wrap;gap:8px;}
+.pc-seal{
+  padding:6px 13px;border:1px solid var(--line);border-radius:var(--r-pill);
+  font-size:12px;color:var(--hui);background:#FFFCF6;transition:.22s;
+}
+.pc-seal.on{background:var(--zhu);border-color:var(--zhu);color:#FFF6E6;}
+.pc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+.pc-actions button{
+  flex:1;min-width:120px;padding:11px 16px;border-radius:var(--r-sm);
+  border:1px solid var(--zhu);font-size:12.5px;letter-spacing:.1em;transition:.22s;
+}
+.pc-actions .primary{background:var(--zhu);color:#FFF6E6;}
+.pc-actions .primary:hover{background:var(--zhu-deep);}
+.pc-actions .ghost{color:var(--zhu);background:transparent;}
+.pc-actions .ghost:hover{background:rgba(195,39,43,.08);}
+.pc-hint{font-size:11.5px;line-height:1.8;color:var(--hui);}
+
+/* ---------- 四、彩蛋：桂花飘落 ---------- */
+.x-petal{
+  position:fixed;top:-30px;z-index:9600;pointer-events:none;
+  font-size:16px;animation:xFall linear forwards;
+}
+@keyframes xFall{
+  0%{transform:translateY(-20px) rotate(0deg);opacity:0;}
+  10%{opacity:1;}
+  100%{transform:translateY(105vh) rotate(560deg);opacity:0;}
+}
+
+/* ---------- 响应式 ---------- */
+@media(max-width:1000px){
+  .gal-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .quiz-shell{grid-template-columns:1fr;}
+  .quiz-side{flex-direction:row;align-items:center;flex-wrap:wrap;}
+  .quiz-side .quiz-progress{flex:1;min-width:150px;}
+  .quiz-side-note{flex-basis:100%;}
+  .pc-shell{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  .gal-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .gal-count{width:100%;margin-left:0;}
+  .quiz-shell,.pc-shell{padding:18px;}
+  .quiz-opts{grid-template-columns:1fr;}
+  .quiz-result{grid-template-columns:1fr;text-align:center;}
+  .quiz-result-img{width:140px;height:150px;margin:0 auto;}
+  .quiz-result p{margin-left:auto;margin-right:auto;}
+  .quiz-result-btns{justify-content:center;}
+  .gal-lb-btn{width:36px;height:50px;font-size:24px;}
+  .gal-lb-prev{left:8px;} .gal-lb-next{right:8px;}
+  .gal-lb-tip{display:none;}
+}

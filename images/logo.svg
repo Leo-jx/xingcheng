@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 180" width="580" height="180" role="img" aria-label="星城风物志 · 长沙文旅">
+  <title>星城风物志 · 长沙文旅（横版标识）</title>
+  <defs>
+    <linearGradient id="csRed2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C3272B"/>
+      <stop offset="1" stop-color="#8E1C1C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== 徽标 ===== -->
+  <g transform="translate(8,10) scale(.8)">
+    <rect x="4" y="4" width="192" height="192" rx="36" fill="url(#csRed2)"/>
+    <rect x="10" y="10" width="180" height="180" rx="31" fill="none" stroke="#E3BE72" stroke-width="1.7"/>
+    <rect x="15.5" y="15.5" width="169" height="169" rx="26" fill="none" stroke="#E3BE72" stroke-opacity=".42" stroke-width=".8"/>
+    <g fill="#E3BE72" opacity=".8">
+      <circle cx="27" cy="27" r="1.5"/><circle cx="173" cy="27" r="1.5"/>
+      <circle cx="27" cy="173" r="1.5"/><circle cx="173" cy="173" r="1.5"/>
+    </g>
+    <g fill="none" stroke="#E3BE72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 30 L104.5 41.9 L117.1 42.4 L107.2 50.4 L110.6 62.6 L100 55.6 L89.4 62.6 L92.8 50.4 L82.9 42.4 L95.5 41.9 Z"/>
+      <path d="M30 106 Q62 70 94 102"/>
+      <path d="M106 102 Q140 72 170 106"/>
+      <path d="M66 104 Q100 86 134 104"/>
+      <path d="M27 116 C50 110 68 122 92 118 C116 114 134 124 173 116"/>
+      <path d="M27 126 C50 120 68 132 92 128 C116 124 134 134 173 126"/>
+    </g>
+    <path d="M70 136 Q100 130 130 136 Q100 142 70 136 Z" fill="none" stroke="#E3BE72" stroke-width="1.8" stroke-linejoin="round"/>
+    <g fill="none" stroke="#E3BE72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="100" cy="146" r="2"/>
+      <path d="M100 148 V150"/>
+      <path d="M66 152 C72 158 78 160 86 160 C92 160 96 150 100 150 C104 150 108 160 114 160 C122 160 128 158 134 152"/>
+      <path d="M78 167 C86 167 90 171 100 171 C110 171 114 167 122 167"/>
+      <path d="M87 171 V178 M113 171 V178 M81 178 H119"/>
+    </g>
+  </g>
+
+  <!-- ===== 标准字 ===== -->
+  <g font-family="STKaiti, KaiTi, Kaiti SC, Songti SC, serif">
+    <text x="186" y="86" font-size="45" letter-spacing="7" fill="#8E1C1C" font-weight="600">星城风物志</text>
+  </g>
+  <path d="M188 100 H500" stroke="#B8893B" stroke-width="1" stroke-opacity=".55"/>
+  <text x="188" y="123" font-size="11.5" letter-spacing="2.5" fill="#B8893B" font-family="Georgia, 'Times New Roman', serif">CHANGSHA · CULTURE &amp; TOURISM</text>
+  <text x="188" y="148" font-size="13" letter-spacing="4" fill="#6C6057" font-family="STKaiti, KaiTi, Songti SC, serif">山水洲城 · 烟火人间</text>
+</svg>
