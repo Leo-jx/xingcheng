@@ -171,9 +171,20 @@ function main() {
   const pageCount = chunks.length;
   addStructured();
 
+  /* 内容未变化时保持时间戳不变，避免每次构建都让 Git 工作区变脏 */
+  let generatedAt = new Date().toISOString();
+  const oldFile = path.join(DATA_DIR, "kb.json");
+  if (fs.existsSync(oldFile)) {
+    try {
+      const old = JSON.parse(fs.readFileSync(oldFile, "utf8"));
+      if (old.count === chunks.length && JSON.stringify(old.chunks) === JSON.stringify(chunks)) {
+        generatedAt = old.generatedAt;
+      }
+    } catch (e) { /* 旧文件损坏则重新生成 */ }
+  }
   const kb = {
     version: 1,
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     source: "星城风物志全站网页内容",
     count: chunks.length,
     chunks
